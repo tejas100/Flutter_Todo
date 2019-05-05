@@ -20,8 +20,6 @@ void initState(){
   super.initState();
   localStorageTest();
 }
-
-
 localStorageTest() async{
 var amIStored=await SharedPreferences.getInstance();
 if(amIStored == null) 
