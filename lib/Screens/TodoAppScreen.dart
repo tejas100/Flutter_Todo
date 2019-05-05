@@ -14,6 +14,25 @@ class _TodoAppState extends State<TodoApp> {
   List<Todo> todoList =[];
 
 int count =0;
+
+
+void initState(){
+  super.initState();
+  localStorageTest();
+}
+
+
+localStorageTest() async{
+var amIStored=await SharedPreferences.getInstance();
+if(amIStored == null) 
+  print("Local Storage is Empty");
+else {
+  print("Something in Storage");
+}
+}
+
+
+
 void addTodoItem(){
   Todo item = Todo(); //creating item of type Todo
   item.task=controller.text; 
